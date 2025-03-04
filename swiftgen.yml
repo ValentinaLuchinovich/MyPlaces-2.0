@@ -1,0 +1,19 @@
+ xcassets:
+  inputs:
+    - MyPlaces/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      params:
+         publicAccess: true
+         enumName: Assets
+         forceProvidesNamespaces: true
+      output: MyPlaces/Assets.swift
+ strings:
+   inputs:
+     - MyPlaces/ru.lproj/Localizable.strings
+   outputs:
+     - templateName: structured-swift5
+       params:
+         publicAccess: true
+         enumName: AppLocalizable
+       output: MyPlaces/AppLocalizable.swift
