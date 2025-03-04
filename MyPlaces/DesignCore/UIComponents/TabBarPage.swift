@@ -9,13 +9,13 @@ import UIKit
 import SnapKit
 
 enum TabBarPage: CaseIterable {
-    case record, analitic, profile
+    case visits, map, profile
 
     init?(index: Int) {
         switch index {
-            case 0: self = .record
-            case 1: self = .analitic
-            case 2: self = .profile
+        case 0: self = .visits
+        case 1: self = .map
+        case 2: self = .profile
             default: return nil
         }
     }
@@ -23,9 +23,9 @@ enum TabBarPage: CaseIterable {
     var title: String {
         var title = ""
         switch self {
-            case .record: title = "Записи"
-            case .analitic: title = "Аналитика"
-            case .profile: title = "Профиль"
+        case .visits: title = "Путешествия"
+        case .map: title = "Карта"
+        case .profile: title = "Аналитика"
         }
         return title
     }
@@ -33,30 +33,30 @@ enum TabBarPage: CaseIterable {
     var pageNumber: Int {
         var num = 0
         switch self {
-            case .record: num = 0
-            case .analitic: num = 1
-            case .profile: num = 2
+        case .visits: num = 0
+        case .map: num = 1
+        case .profile: num = 2
         }
         return num
     }
 
     var icon: UIImage? {
         var icon: UIImage?
-//        switch self {
-//            case .record: icon = Assets.TabBar.categoryTab.image
-//            case .analitic: icon = Assets.TabBar.graphTab.image
-//            case .profile: icon = Assets.TabBar.profileTab.image
-//        }
+        switch self {
+        case .visits: icon = UIImage(systemName: "map")
+        case .map: icon = UIImage(systemName: "globe.europe.africa")
+        case .profile: icon = UIImage(systemName: "person")
+        }
         return icon
     }
     
     var selectedIcon: UIImage? {
         var icon: UIImage?
-//        switch self {
-//            case .record: icon = Assets.TabBar.categoryFill.image
-//            case .analitic: icon = Assets.TabBar.graphFill.image
-//            case .profile: icon = Assets.TabBar.profileFill.image
-//        }
+        switch self {
+        case .visits: icon = UIImage(systemName: "map.fill")
+        case .map: icon = UIImage(systemName: "globe.europe.africa.fill")
+        case .profile: icon = UIImage(systemName: "person.fill")
+        }
         return icon
     }
 }
@@ -75,19 +75,12 @@ final class TabBarButton: UIView {
     
     // MARK: Private properties
     
-    private var pageType: TabBarPage = .analitic
+    private var pageType: TabBarPage = .visits
     private var buttonHandler: (Int)->() = {_ in}
     
     private lazy var image = UIImageView()
     
     private lazy var title = Label(font: GeometriaFont.small(.medium))
-    
-    private lazy var dot: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = Constants.dotSize / 2
-//        view.backgroundColor = Assets.Colors.purple.color
-        return view
-    }()
     
     private lazy var button: UIButton = {
         let btn = UIButton()
@@ -117,15 +110,12 @@ extension TabBarButton {
         title.text = pageType.title
         
         if isSelected {
-//            title.textColor = Assets.Colors.purple.color
+            title.textColor = Assets.Colors.orange.color
             image.image = pageType.selectedIcon
         } else {
-//            title.textColor = Assets.Colors.grey.color
+            title.textColor = Assets.Colors.grey.color
             image.image = pageType.icon
         }
-        
-        image.contentMode = .top
-        dot.isHidden = !isSelected
     }
 }
 
@@ -136,7 +126,6 @@ private extension TabBarButton {
     func setupUI() {
         addSubview(image)
         addSubview(title)
-        addSubview(dot)
         addSubview(button)
         
         button.snp.makeConstraints { make in
@@ -152,13 +141,6 @@ private extension TabBarButton {
         title.snp.makeConstraints { make in
             make.top.equalTo(image.snp.bottom).inset(Constants.topPadding)
             make.centerX.equalToSuperview()
-        }
-        
-        dot.snp.makeConstraints { make in
-            make.top.equalTo(title.snp.bottom).inset(Constants.topPadding)
-            make.size.equalTo(Constants.dotSize)
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview()
         }
     }
     

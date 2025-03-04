@@ -1,13 +1,13 @@
 //
-//  ViewController.swift
+//  VisitsViewController.swift
 //  MyPlaces
 //
-//  Created by Валентина Лучинович on 03.03.2025.
+//  Created by Валентина Лучинович on 04.03.2025.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+final class VisitsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

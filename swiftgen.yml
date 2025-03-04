@@ -1,12 +1,14 @@
+
  xcassets:
   inputs:
     - MyPlaces/Assets.xcassets
   outputs:
     - templateName: swift5
       params:
+         forceProvidesNamespaces: true
+         forceFileNameEnum: true
          publicAccess: true
          enumName: Assets
-         forceProvidesNamespaces: true
       output: MyPlaces/Assets.swift
  strings:
    inputs:
@@ -14,6 +16,8 @@
    outputs:
      - templateName: structured-swift5
        params:
+         forceProvidesNamespaces: true
+         forceFileNameEnum: true
          publicAccess: true
          enumName: AppLocalizable
        output: MyPlaces/AppLocalizable.swift

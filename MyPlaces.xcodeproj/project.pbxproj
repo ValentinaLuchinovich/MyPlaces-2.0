@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6E185E4C2D75CC6600A77A0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E4B2D75CC6600A77A0D /* AppDelegate.swift */; };
 		6E185E4E2D75CC6600A77A0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E4D2D75CC6600A77A0D /* SceneDelegate.swift */; };
-		6E185E502D75CC6600A77A0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E4F2D75CC6600A77A0D /* ViewController.swift */; };
+		6E185E502D75CC6600A77A0D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E4F2D75CC6600A77A0D /* MapViewController.swift */; };
 		6E185E532D75CC6600A77A0D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6E185E522D75CC6600A77A0D /* Base */; };
 		6E185E552D75CC6700A77A0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E185E542D75CC6700A77A0D /* Assets.xcassets */; };
 		6E185E582D75CC6700A77A0D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6E185E572D75CC6700A77A0D /* Base */; };
@@ -28,13 +28,17 @@
 		6E185E842D75EA3600A77A0D /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E832D75EA3600A77A0D /* AppConstants.swift */; };
 		6E185E862D75EB3C00A77A0D /* QRCodeTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E852D75EB3C00A77A0D /* QRCodeTabCoordinator.swift */; };
 		6E185E912D764FF600A77A0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E185E8F2D764FF600A77A0D /* Localizable.strings */; };
+		6EDDD3152D7756580063426B /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDDD3142D7756580063426B /* Assets.swift */; };
+		6EDDD3172D77565E0063426B /* AppLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDDD3162D77565E0063426B /* AppLocalizable.swift */; };
+		6EE9DEDE2D771A110015A19E /* VisitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9DEDD2D771A110015A19E /* VisitsViewController.swift */; };
+		6EE9DEE02D771A260015A19E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9DEDF2D771A260015A19E /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6E185E482D75CC6600A77A0D /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E185E4B2D75CC6600A77A0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E185E4D2D75CC6600A77A0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6E185E4F2D75CC6600A77A0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E185E4F2D75CC6600A77A0D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6E185E522D75CC6600A77A0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E185E542D75CC6700A77A0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E185E572D75CC6700A77A0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +60,10 @@
 		6E185E832D75EA3600A77A0D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6E185E852D75EB3C00A77A0D /* QRCodeTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTabCoordinator.swift; sourceTree = "<group>"; };
 		6E185E902D764FF600A77A0D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Localizable.strings; sourceTree = "<group>"; };
+		6EDDD3142D7756580063426B /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		6EDDD3162D77565E0063426B /* AppLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalizable.swift; sourceTree = "<group>"; };
+		6EE9DEDD2D771A110015A19E /* VisitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsViewController.swift; sourceTree = "<group>"; };
+		6EE9DEDF2D771A260015A19E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +103,12 @@
 				6E185E662D75CEB600A77A0D /* Navigations */,
 				6E185E5F2D75CC9500A77A0D /* Application */,
 				6E185E872D75EEE600A77A0D /* Screens */,
-				6E185E4F2D75CC6600A77A0D /* ViewController.swift */,
 				6E185E512D75CC6600A77A0D /* Main.storyboard */,
 				6E185E542D75CC6700A77A0D /* Assets.xcassets */,
 				6E185E562D75CC6700A77A0D /* LaunchScreen.storyboard */,
 				6E185E592D75CC6700A77A0D /* Info.plist */,
+				6EDDD3162D77565E0063426B /* AppLocalizable.swift */,
+				6EDDD3142D7756580063426B /* Assets.swift */,
 				6E185E8E2D764FE100A77A0D /* ru.lproj */,
 			);
 			path = MyPlaces;
@@ -187,6 +196,7 @@
 		6E185E882D75EEFD00A77A0D /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				6E185E4F2D75CC6600A77A0D /* MapViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -194,6 +204,7 @@
 		6E185E892D75EF0A00A77A0D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				6EE9DEDF2D771A260015A19E /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -201,6 +212,7 @@
 		6E185E8A2D75EF1700A77A0D /* Visits */ = {
 			isa = PBXGroup;
 			children = (
+				6EE9DEDD2D771A110015A19E /* VisitsViewController.swift */,
 			);
 			path = Visits;
 			sourceTree = "<group>";
@@ -223,6 +235,7 @@
 				6E185E442D75CC6600A77A0D /* Sources */,
 				6E185E452D75CC6600A77A0D /* Frameworks */,
 				6E185E462D75CC6600A77A0D /* Resources */,
+				6EDC463E2D7736B600B7B1BA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -244,7 +257,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					6E185E472D75CC6600A77A0D = {
 						CreatedOnToolsVersion = 15.4;
@@ -287,6 +300,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6EDC463E2D7736B600B7B1BA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/swiftgen-script.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6E185E442D75CC6600A77A0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -294,13 +327,16 @@
 			files = (
 				6E185E7E2D75E7D000A77A0D /* Fonts.swift in Sources */,
 				6E185E762D75E37600A77A0D /* TabBarPage.swift in Sources */,
+				6EDDD3152D7756580063426B /* Assets.swift in Sources */,
+				6EE9DEE02D771A260015A19E /* ProfileViewController.swift in Sources */,
 				6E185E622D75CE1500A77A0D /* AppCoordinator.swift in Sources */,
 				6E185E6C2D75CFBC00A77A0D /* TabBarController.swift in Sources */,
+				6EDDD3172D77565E0063426B /* AppLocalizable.swift in Sources */,
 				6E185E842D75EA3600A77A0D /* AppConstants.swift in Sources */,
 				6E185E682D75CECE00A77A0D /* NavigationController.swift in Sources */,
 				6E185E722D75E2A000A77A0D /* ChildCoordinated.swift in Sources */,
 				6E185E7B2D75E76600A77A0D /* Label.swift in Sources */,
-				6E185E502D75CC6600A77A0D /* ViewController.swift in Sources */,
+				6E185E502D75CC6600A77A0D /* MapViewController.swift in Sources */,
 				6E185E702D75D05F00A77A0D /* CustomTabBar.swift in Sources */,
 				6E185E6A2D75CF3000A77A0D /* TabBarCoordinator.swift in Sources */,
 				6E185E642D75CE5800A77A0D /* Coordinator.swift in Sources */,
@@ -308,6 +344,7 @@
 				6E185E4C2D75CC6600A77A0D /* AppDelegate.swift in Sources */,
 				6E185E862D75EB3C00A77A0D /* QRCodeTabCoordinator.swift in Sources */,
 				6E185E4E2D75CC6600A77A0D /* SceneDelegate.swift in Sources */,
+				6EE9DEDE2D771A110015A19E /* VisitsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +383,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -409,6 +447,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -468,6 +507,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NHUDCP2K7S;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -496,6 +536,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NHUDCP2K7S;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
