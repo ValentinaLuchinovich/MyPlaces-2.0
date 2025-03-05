@@ -28,6 +28,9 @@
 		6E185E842D75EA3600A77A0D /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E832D75EA3600A77A0D /* AppConstants.swift */; };
 		6E185E862D75EB3C00A77A0D /* QRCodeTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E852D75EB3C00A77A0D /* QRCodeTabCoordinator.swift */; };
 		6E185E912D764FF600A77A0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E185E8F2D764FF600A77A0D /* Localizable.strings */; };
+		6EADA40A2D7860AD00BE0D93 /* Geometria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EADA4072D7860AD00BE0D93 /* Geometria.ttf */; };
+		6EADA40B2D7860AD00BE0D93 /* Geometria-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EADA4082D7860AD00BE0D93 /* Geometria-Bold.ttf */; };
+		6EADA40C2D7860AD00BE0D93 /* Geometria-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EADA4092D7860AD00BE0D93 /* Geometria-Medium.ttf */; };
 		6EDDD3152D7756580063426B /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDDD3142D7756580063426B /* Assets.swift */; };
 		6EDDD3172D77565E0063426B /* AppLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDDD3162D77565E0063426B /* AppLocalizable.swift */; };
 		6EE9DEDE2D771A110015A19E /* VisitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9DEDD2D771A110015A19E /* VisitsViewController.swift */; };
@@ -54,12 +57,12 @@
 		6E185E752D75E37600A77A0D /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		6E185E7A2D75E76600A77A0D /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		6E185E7D2D75E7D000A77A0D /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		6E185E7F2D75E80100A77A0D /* Geometria-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Geometria-Bold.ttf"; path = "../../../Работа/zabot-Ios 2/zabot-Ios/zabot-Ios/Fonts/Geometria-Bold.ttf"; sourceTree = "<group>"; };
-		6E185E802D75E81000A77A0D /* Geometria-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Geometria-Medium.ttf"; path = "../../../Работа/zabot-Ios 2/zabot-Ios/zabot-Ios/Fonts/Geometria-Medium.ttf"; sourceTree = "<group>"; };
-		6E185E812D75E81000A77A0D /* Geometria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Geometria.ttf; path = "../../../Работа/zabot-Ios 2/zabot-Ios/zabot-Ios/Fonts/Geometria.ttf"; sourceTree = "<group>"; };
 		6E185E832D75EA3600A77A0D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6E185E852D75EB3C00A77A0D /* QRCodeTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTabCoordinator.swift; sourceTree = "<group>"; };
 		6E185E902D764FF600A77A0D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Localizable.strings; sourceTree = "<group>"; };
+		6EADA4072D7860AD00BE0D93 /* Geometria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Geometria.ttf; sourceTree = "<group>"; };
+		6EADA4082D7860AD00BE0D93 /* Geometria-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Bold.ttf"; sourceTree = "<group>"; };
+		6EADA4092D7860AD00BE0D93 /* Geometria-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Medium.ttf"; sourceTree = "<group>"; };
 		6EDDD3142D7756580063426B /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		6EDDD3162D77565E0063426B /* AppLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalizable.swift; sourceTree = "<group>"; };
 		6EE9DEDD2D771A110015A19E /* VisitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsViewController.swift; sourceTree = "<group>"; };
@@ -168,9 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				6E185E7D2D75E7D000A77A0D /* Fonts.swift */,
-				6E185E7F2D75E80100A77A0D /* Geometria-Bold.ttf */,
-				6E185E802D75E81000A77A0D /* Geometria-Medium.ttf */,
-				6E185E812D75E81000A77A0D /* Geometria.ttf */,
+				6EADA4072D7860AD00BE0D93 /* Geometria.ttf */,
+				6EADA4082D7860AD00BE0D93 /* Geometria-Bold.ttf */,
+				6EADA4092D7860AD00BE0D93 /* Geometria-Medium.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -291,6 +294,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EADA40A2D7860AD00BE0D93 /* Geometria.ttf in Resources */,
+				6EADA40B2D7860AD00BE0D93 /* Geometria-Bold.ttf in Resources */,
+				6EADA40C2D7860AD00BE0D93 /* Geometria-Medium.ttf in Resources */,
 				6E185E552D75CC6700A77A0D /* Assets.xcassets in Resources */,
 				6E185E912D764FF600A77A0D /* Localizable.strings in Resources */,
 				6E185E582D75CC6700A77A0D /* Base in Resources */,
