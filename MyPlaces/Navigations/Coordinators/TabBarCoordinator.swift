@@ -39,17 +39,16 @@ final class TabBarCoordinator: Coordinator {
 
 extension TabBarCoordinator: ChildCoordinated {
     
-    public typealias Screen = TabBarPage
-    
-    public func start(with screen: TabBarPage) {
-        let controllers: [UIViewController] = childCoordinators.map { $0.makeTab() }
+    public func start()  {
+        let pages = TabBarPage.allCases
+        let controllers: [UIViewController] = childCoordinators.enumerated().map { (index, element) in
+            let controller = element.makeTab()
+            controller.tabBarItem = UITabBarItem(title: nil, image: pages[index].icon?.withRenderingMode(.alwaysOriginal), tag: pages[index].pageNumber)
+            controller.tabBarItem.selectedImage = pages[index].selectedIcon?.withRenderingMode(.alwaysOriginal)
+            controller.tabBarItem.title = pages[index].title
+            return controller
+        }
         tabBar.setViewControllers(controllers, animated: true)
         navigationController.pushViewController(tabBar, animated: true)
-    }
-    
-    public func clearChilds() {
-        super.clear()
-        childCoordinators.forEach { $0.backToRootWithDismiss() }
-        childCoordinators = []
     }
 }

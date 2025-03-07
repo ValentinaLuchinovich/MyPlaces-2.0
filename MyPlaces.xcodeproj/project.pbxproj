@@ -26,11 +26,14 @@
 		6E185E7B2D75E76600A77A0D /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E7A2D75E76600A77A0D /* Label.swift */; };
 		6E185E7E2D75E7D000A77A0D /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E7D2D75E7D000A77A0D /* Fonts.swift */; };
 		6E185E842D75EA3600A77A0D /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E832D75EA3600A77A0D /* AppConstants.swift */; };
-		6E185E862D75EB3C00A77A0D /* QRCodeTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E852D75EB3C00A77A0D /* QRCodeTabCoordinator.swift */; };
+		6E185E862D75EB3C00A77A0D /* MapTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E852D75EB3C00A77A0D /* MapTabCoordinator.swift */; };
 		6E185E912D764FF600A77A0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E185E8F2D764FF600A77A0D /* Localizable.strings */; };
 		6EADA40A2D7860AD00BE0D93 /* Geometria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EADA4072D7860AD00BE0D93 /* Geometria.ttf */; };
 		6EADA40B2D7860AD00BE0D93 /* Geometria-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EADA4082D7860AD00BE0D93 /* Geometria-Bold.ttf */; };
 		6EADA40C2D7860AD00BE0D93 /* Geometria-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EADA4092D7860AD00BE0D93 /* Geometria-Medium.ttf */; };
+		6EADA40F2D7864A700BE0D93 /* VisitsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EADA40E2D7864A400BE0D93 /* VisitsCoordinator.swift */; };
+		6EADA4122D7864D200BE0D93 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EADA4112D7864D200BE0D93 /* ProfileCoordinator.swift */; };
+		6EADA4152D78660E00BE0D93 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EADA4142D78660E00BE0D93 /* MapCoordinator.swift */; };
 		6EDDD3152D7756580063426B /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDDD3142D7756580063426B /* Assets.swift */; };
 		6EDDD3172D77565E0063426B /* AppLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDDD3162D77565E0063426B /* AppLocalizable.swift */; };
 		6EE9DEDE2D771A110015A19E /* VisitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9DEDD2D771A110015A19E /* VisitsViewController.swift */; };
@@ -58,11 +61,14 @@
 		6E185E7A2D75E76600A77A0D /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		6E185E7D2D75E7D000A77A0D /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		6E185E832D75EA3600A77A0D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		6E185E852D75EB3C00A77A0D /* QRCodeTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTabCoordinator.swift; sourceTree = "<group>"; };
+		6E185E852D75EB3C00A77A0D /* MapTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTabCoordinator.swift; sourceTree = "<group>"; };
 		6E185E902D764FF600A77A0D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Localizable.strings; sourceTree = "<group>"; };
 		6EADA4072D7860AD00BE0D93 /* Geometria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Geometria.ttf; sourceTree = "<group>"; };
 		6EADA4082D7860AD00BE0D93 /* Geometria-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Bold.ttf"; sourceTree = "<group>"; };
 		6EADA4092D7860AD00BE0D93 /* Geometria-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Medium.ttf"; sourceTree = "<group>"; };
+		6EADA40E2D7864A400BE0D93 /* VisitsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsCoordinator.swift; sourceTree = "<group>"; };
+		6EADA4112D7864D200BE0D93 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		6EADA4142D78660E00BE0D93 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		6EDDD3142D7756580063426B /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		6EDDD3162D77565E0063426B /* AppLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalizable.swift; sourceTree = "<group>"; };
 		6EE9DEDD2D771A110015A19E /* VisitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsViewController.swift; sourceTree = "<group>"; };
@@ -100,11 +106,11 @@
 		6E185E4A2D75CC6600A77A0D /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				6E185E5F2D75CC9500A77A0D /* Application */,
 				6E185E822D75EA1800A77A0D /* Services */,
 				6E185E7C2D75E7BE00A77A0D /* Fonts */,
 				6E185E6D2D75CFF500A77A0D /* DesignCore */,
 				6E185E662D75CEB600A77A0D /* Navigations */,
-				6E185E5F2D75CC9500A77A0D /* Application */,
 				6E185E872D75EEE600A77A0D /* Screens */,
 				6E185E512D75CC6600A77A0D /* Main.storyboard */,
 				6E185E542D75CC6700A77A0D /* Assets.xcassets */,
@@ -134,7 +140,7 @@
 				6E185E692D75CF3000A77A0D /* TabBarCoordinator.swift */,
 				6E185E712D75E2A000A77A0D /* ChildCoordinated.swift */,
 				6E185E732D75E32000A77A0D /* TabBarChildCoordinated.swift */,
-				6E185E852D75EB3C00A77A0D /* QRCodeTabCoordinator.swift */,
+				6E185E852D75EB3C00A77A0D /* MapTabCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				6E185E4F2D75CC6600A77A0D /* MapViewController.swift */,
+				6EADA4132D78654800BE0D93 /* Coordinator */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -208,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				6EE9DEDF2D771A260015A19E /* ProfileViewController.swift */,
+				6EADA4102D7864C800BE0D93 /* Coordinator */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -216,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				6EE9DEDD2D771A110015A19E /* VisitsViewController.swift */,
+				6EADA40D2D78649100BE0D93 /* Coordinator */,
 			);
 			path = Visits;
 			sourceTree = "<group>";
@@ -226,6 +235,30 @@
 				6E185E8F2D764FF600A77A0D /* Localizable.strings */,
 			);
 			path = ru.lproj;
+			sourceTree = "<group>";
+		};
+		6EADA40D2D78649100BE0D93 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6EADA40E2D7864A400BE0D93 /* VisitsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		6EADA4102D7864C800BE0D93 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6EADA4112D7864D200BE0D93 /* ProfileCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		6EADA4132D78654800BE0D93 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6EADA4142D78660E00BE0D93 /* MapCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,16 +372,19 @@
 				6E185E6C2D75CFBC00A77A0D /* TabBarController.swift in Sources */,
 				6EDDD3172D77565E0063426B /* AppLocalizable.swift in Sources */,
 				6E185E842D75EA3600A77A0D /* AppConstants.swift in Sources */,
+				6EADA4122D7864D200BE0D93 /* ProfileCoordinator.swift in Sources */,
 				6E185E682D75CECE00A77A0D /* NavigationController.swift in Sources */,
+				6EADA40F2D7864A700BE0D93 /* VisitsCoordinator.swift in Sources */,
 				6E185E722D75E2A000A77A0D /* ChildCoordinated.swift in Sources */,
 				6E185E7B2D75E76600A77A0D /* Label.swift in Sources */,
+				6EADA4152D78660E00BE0D93 /* MapCoordinator.swift in Sources */,
 				6E185E502D75CC6600A77A0D /* MapViewController.swift in Sources */,
 				6E185E702D75D05F00A77A0D /* CustomTabBar.swift in Sources */,
 				6E185E6A2D75CF3000A77A0D /* TabBarCoordinator.swift in Sources */,
 				6E185E642D75CE5800A77A0D /* Coordinator.swift in Sources */,
 				6E185E742D75E32000A77A0D /* TabBarChildCoordinated.swift in Sources */,
 				6E185E4C2D75CC6600A77A0D /* AppDelegate.swift in Sources */,
-				6E185E862D75EB3C00A77A0D /* QRCodeTabCoordinator.swift in Sources */,
+				6E185E862D75EB3C00A77A0D /* MapTabCoordinator.swift in Sources */,
 				6E185E4E2D75CC6600A77A0D /* SceneDelegate.swift in Sources */,
 				6EE9DEDE2D771A110015A19E /* VisitsViewController.swift in Sources */,
 			);

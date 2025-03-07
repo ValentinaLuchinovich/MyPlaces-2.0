@@ -17,7 +17,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         }
     }
     
-    private lazy var qrBtn = UIButton(frame: CGRect(x: (self.view.bounds.width / 2)-26, y: -20, width: 52, height: 52))
+    private lazy var mapBtn = UIButton(frame: CGRect(x: (self.view.bounds.width / 2)-26, y: -20, width: 52, height: 52))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +26,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         setupQrButton()
     }
     
+#warning("Сейчас верзня чвсть красной кнопки не работает")
+    
     //Добавляет действия нажатия кнопки при попадании в зону tabBar.item
     func qrButtonIsSelected() {
-        qrBtn.sendActions(for: .touchUpInside)
+        mapBtn.sendActions(for: .touchUpInside)
     }
 }
 
@@ -37,18 +39,18 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 private extension TabBarController {
     
     func setupQrButton() {
-        qrBtn.setImage(UIImage(named: "qr"), for: .normal)
-        qrBtn.setImage(UIImage(named: "qr"), for: .highlighted)
-        qrBtn.contentMode = .scaleToFill
-        qrBtn.layer.cornerRadius = (qrBtn.layer.frame.width / 2)
-        self.tabBar.addSubview(qrBtn)
-        qrBtn.layer.removeAllAnimations()
-        qrBtn.addTarget(self, action: #selector(self.menuButtonAction), for: .touchUpInside)
+        mapBtn.backgroundColor = .lightText
+        mapBtn.setImage( UIImage(systemName: "globe.europe.africa.fill"), for: .normal)
+        mapBtn.contentMode = .scaleToFill
+        mapBtn.layer.cornerRadius = (mapBtn.layer.frame.width / 2)
+        self.tabBar.addSubview(mapBtn)
+        mapBtn.layer.removeAllAnimations()
+        mapBtn.addTarget(self, action: #selector(self.menuButtonAction), for: .touchUpInside)
         self.view.layoutIfNeeded()
     }
     
     @objc func menuButtonAction() {
-        let coordinator = QRCodeTabCoordinator(NavigationController())
+        let coordinator = MapTabCoordinator(NavigationController())
         coordinator.parentNavigationController = navigationController as? NavigationController
         coordinator.start()
     }

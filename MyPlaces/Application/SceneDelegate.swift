@@ -22,8 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        //navigationController.pushViewController(HomeViewController(), animated: true)
-        
         appCoordinator = AppCoordinator(navigationController)
         appCoordinator?.start()
     }

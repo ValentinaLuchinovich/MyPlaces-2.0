@@ -6,6 +6,5 @@
 //
 
 protocol ChildCoordinated: Coordinator {
-    associatedtype Screen
-    func start(with screen: Screen)
+    func start()
 }

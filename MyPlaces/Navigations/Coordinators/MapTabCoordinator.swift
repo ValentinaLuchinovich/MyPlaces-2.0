@@ -1,23 +1,20 @@
 //
-//  QRCodeTabCoordinator.swift
+//  MapTabCoordinator.swift
 //  MyPlaces
 //
 //  Created by Валентина Лучинович on 03.03.2025.
 //
 
-final class QRCodeTabCoordinator {
+final class MapTabCoordinator {
 
     // MARK: Protocol properties
     
-//    weak var finishDelegate: CoordinatorFinishDelegate?
     var childCoordinators = [TabBarChildCoordinated]()
-    var type: TabBarPage = .profile
     var navigationController: NavigationController
     weak var parentNavigationController: NavigationController?
     
     // MARK: Private properties
     
-//    private var fpc = FloatingPanelController()
     private var isBonus = true
     private var updateProfile: (() -> ())?
     
@@ -28,7 +25,7 @@ final class QRCodeTabCoordinator {
     }
     
     deinit {
-        print("QRCodeTabCoordinator deinit")
+        print("MapTabCoordinator deinit")
     }
     
     func start() {
@@ -40,7 +37,7 @@ final class QRCodeTabCoordinator {
 
 // MARK: Private
 
-private extension QRCodeTabCoordinator {
+private extension MapTabCoordinator {
     
     private func showDetailBonusCard() {
 //        let contentVC = DetailBonusCardViewController()
