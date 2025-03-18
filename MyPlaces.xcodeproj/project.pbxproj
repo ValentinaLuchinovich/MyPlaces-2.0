@@ -28,6 +28,10 @@
 		6E185E842D75EA3600A77A0D /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E832D75EA3600A77A0D /* AppConstants.swift */; };
 		6E185E862D75EB3C00A77A0D /* MapTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E852D75EB3C00A77A0D /* MapTabCoordinator.swift */; };
 		6E185E912D764FF600A77A0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E185E8F2D764FF600A77A0D /* Localizable.strings */; };
+		6E5BD8F62D89B16F00A0BA7E /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BD8F52D89B16D00A0BA7E /* CountryTableViewCell.swift */; };
+		6E5BD8F92D89B43B00A0BA7E /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BD8F82D89B43B00A0BA7E /* CheckBox.swift */; };
+		6E5BD8FC2D89B71B00A0BA7E /* UIButton + setImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BD8FB2D89B71B00A0BA7E /* UIButton + setImage.swift */; };
+		6E5BD8FE2D89B76F00A0BA7E /* UIImage+resizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BD8FD2D89B76F00A0BA7E /* UIImage+resizeImage.swift */; };
 		6EADA40A2D7860AD00BE0D93 /* Geometria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EADA4072D7860AD00BE0D93 /* Geometria.ttf */; };
 		6EADA40B2D7860AD00BE0D93 /* Geometria-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EADA4082D7860AD00BE0D93 /* Geometria-Bold.ttf */; };
 		6EADA40C2D7860AD00BE0D93 /* Geometria-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EADA4092D7860AD00BE0D93 /* Geometria-Medium.ttf */; };
@@ -63,6 +67,10 @@
 		6E185E832D75EA3600A77A0D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6E185E852D75EB3C00A77A0D /* MapTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTabCoordinator.swift; sourceTree = "<group>"; };
 		6E185E902D764FF600A77A0D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Localizable.strings; sourceTree = "<group>"; };
+		6E5BD8F52D89B16D00A0BA7E /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		6E5BD8F82D89B43B00A0BA7E /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		6E5BD8FB2D89B71B00A0BA7E /* UIButton + setImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + setImage.swift"; sourceTree = "<group>"; };
+		6E5BD8FD2D89B76F00A0BA7E /* UIImage+resizeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resizeImage.swift"; sourceTree = "<group>"; };
 		6EADA4072D7860AD00BE0D93 /* Geometria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Geometria.ttf; sourceTree = "<group>"; };
 		6EADA4082D7860AD00BE0D93 /* Geometria-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Bold.ttf"; sourceTree = "<group>"; };
 		6EADA4092D7860AD00BE0D93 /* Geometria-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Medium.ttf"; sourceTree = "<group>"; };
@@ -158,6 +166,7 @@
 		6E185E6D2D75CFF500A77A0D /* DesignCore */ = {
 			isa = PBXGroup;
 			children = (
+				6E5BD8FA2D89B6EF00A0BA7E /* Supporting */,
 				6E185E6E2D75D03F00A77A0D /* UIComponents */,
 			);
 			path = DesignCore;
@@ -166,6 +175,7 @@
 		6E185E6E2D75D03F00A77A0D /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				6E5BD8F72D89B42300A0BA7E /* Buttons */,
 				6E185E6F2D75D05F00A77A0D /* CustomTabBar.swift */,
 				6E185E752D75E37600A77A0D /* TabBarPage.swift */,
 				6E185E7A2D75E76600A77A0D /* Label.swift */,
@@ -368,6 +378,8 @@
 				6E185E762D75E37600A77A0D /* TabBarPage.swift in Sources */,
 				6EDDD3152D7756580063426B /* Assets.swift in Sources */,
 				6EE9DEE02D771A260015A19E /* ProfileViewController.swift in Sources */,
+				6E5BD8F92D89B43B00A0BA7E /* CheckBox.swift in Sources */,
+				6E5BD8FE2D89B76F00A0BA7E /* UIImage+resizeImage.swift in Sources */,
 				6E185E622D75CE1500A77A0D /* AppCoordinator.swift in Sources */,
 				6E185E6C2D75CFBC00A77A0D /* TabBarController.swift in Sources */,
 				6EDDD3172D77565E0063426B /* AppLocalizable.swift in Sources */,
@@ -382,6 +394,8 @@
 				6E185E702D75D05F00A77A0D /* CustomTabBar.swift in Sources */,
 				6E185E6A2D75CF3000A77A0D /* TabBarCoordinator.swift in Sources */,
 				6E185E642D75CE5800A77A0D /* Coordinator.swift in Sources */,
+				6E5BD8F62D89B16F00A0BA7E /* CountryTableViewCell.swift in Sources */,
+				6E5BD8FC2D89B71B00A0BA7E /* UIButton + setImage.swift in Sources */,
 				6E185E742D75E32000A77A0D /* TabBarChildCoordinated.swift in Sources */,
 				6E185E4C2D75CC6600A77A0D /* AppDelegate.swift in Sources */,
 				6E185E862D75EB3C00A77A0D /* MapTabCoordinator.swift in Sources */,

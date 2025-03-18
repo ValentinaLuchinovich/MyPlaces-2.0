@@ -28,9 +28,11 @@ public enum Assets {
       public static let grey = ColorAsset(name: "grey")
       public static let orange = ColorAsset(name: "orange")
       public static let orangeLight = ColorAsset(name: "orange_light")
+      public static let white = ColorAsset(name: "white")
     }
     public enum Images {
-      public static let favorite = ImageAsset(name: "favorite")
+        public static let checkbox = ImageAsset(name: "checkbox")
+        public static let checkboxSelected = ImageAsset(name: "checkbox_selected")
     }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
