@@ -39,7 +39,11 @@ final class CountryTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var checkBox = CheckboxButton()
+    private lazy var checkboxButton: UIButton = {
+        let button = CheckboxButton()
+        button.addTarget(self, action: #selector(didTapCheckbox), for: .touchUpInside)
+        return button
+    }()
     
     // MARK: Initialization
     
@@ -50,6 +54,16 @@ final class CountryTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Actions
+
+@objc
+private extension CountryTableViewCell {
+    
+    func didTapCheckbox() {
+        checkboxButton.isSelected.toggle()
     }
 }
 
@@ -66,7 +80,7 @@ private extension CountryTableViewCell {
         contentView.addSubview(containerView)
         containerView.addSubview(flagImageView)
         containerView.addSubview(titleLabel)
-        containerView.addSubview(checkBox)
+        containerView.addSubview(checkboxButton)
 
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -82,9 +96,9 @@ private extension CountryTableViewCell {
             make.centerY.equalToSuperview()
         }
         
-        checkBox.snp.makeConstraints { make in
+        checkboxButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(titleLabel.snp.trailing).inset(AppConstants.mediumPadding)
+            make.leading.equalTo(titleLabel.snp.trailing).offset(AppConstants.mediumPadding)
             make.trailing.equalToSuperview().inset(AppConstants.mediumPadding)
         }
     }
