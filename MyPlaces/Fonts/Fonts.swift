@@ -71,38 +71,3 @@ enum GeometriaFont {
         }
     }
 }
-
-extension String {
-    
-    static func attributedString(from html: String, withFont baseFont: UIFont) -> NSAttributedString? {
-        guard let data = html.data(using: .utf8) else { return nil }
-        
-        do {
-            // Создание NSAttributedString из HTML
-            let attributedString = try NSMutableAttributedString(
-                data: data,
-                options: [
-                    .documentType: NSAttributedString.DocumentType.html,
-                    .characterEncoding: String.Encoding.utf8.rawValue
-                ],
-                documentAttributes: nil
-            )
-            
-            // Изменение шрифта, сохраняя жирность и курсив
-            attributedString.beginEditing()
-            attributedString.enumerateAttribute(.font, in: NSRange(location: 0, length: attributedString.length)) { value, range, _ in
-                if let existingFont = value as? UIFont {
-                    // Создаем новый шрифт с сохранением текущих атрибутов (жирность/курсив)
-                    let fontDescriptor = existingFont.fontDescriptor.withFamily(baseFont.familyName)
-                    let updatedFont = UIFont(descriptor: fontDescriptor, size: baseFont.pointSize)
-                    attributedString.addAttribute(.font, value: updatedFont, range: range)
-                }
-            }
-            attributedString.endEditing()
-            
-            return attributedString
-        } catch {
-            return nil
-        }
-    }
-}

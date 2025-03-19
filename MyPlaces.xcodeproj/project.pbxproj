@@ -188,8 +188,8 @@
 			children = (
 				6E185E7D2D75E7D000A77A0D /* Fonts.swift */,
 				6EADA4072D7860AD00BE0D93 /* Geometria.ttf */,
-				6EADA4082D7860AD00BE0D93 /* Geometria-Bold.ttf */,
 				6EADA4092D7860AD00BE0D93 /* Geometria-Medium.ttf */,
+				6EADA4082D7860AD00BE0D93 /* Geometria-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
