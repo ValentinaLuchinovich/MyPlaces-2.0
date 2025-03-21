@@ -28,6 +28,9 @@
 		6E185E842D75EA3600A77A0D /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E832D75EA3600A77A0D /* AppConstants.swift */; };
 		6E185E862D75EB3C00A77A0D /* MapTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E852D75EB3C00A77A0D /* MapTabCoordinator.swift */; };
 		6E185E912D764FF600A77A0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E185E8F2D764FF600A77A0D /* Localizable.strings */; };
+		6E2BBD072D8C63E10033A994 /* VisitsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2BBD062D8C63D50033A994 /* VisitsService.swift */; };
+		6E2BBD092D8C64F30033A994 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2BBD082D8C64EB0033A994 /* CountryModel.swift */; };
+		6E2BBD0D2D8C65580033A994 /* CountryAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2BBD0C2D8C654E0033A994 /* CountryAPIModel.swift */; };
 		6E5BD8F62D89B16F00A0BA7E /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BD8F52D89B16D00A0BA7E /* CountryTableViewCell.swift */; };
 		6E5BD8F92D89B43B00A0BA7E /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BD8F82D89B43B00A0BA7E /* CheckBox.swift */; };
 		6E5BD8FC2D89B71B00A0BA7E /* UIButton + setImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BD8FB2D89B71B00A0BA7E /* UIButton + setImage.swift */; };
@@ -73,6 +76,9 @@
 		6E185E832D75EA3600A77A0D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6E185E852D75EB3C00A77A0D /* MapTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTabCoordinator.swift; sourceTree = "<group>"; };
 		6E185E902D764FF600A77A0D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Localizable.strings; sourceTree = "<group>"; };
+		6E2BBD062D8C63D50033A994 /* VisitsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsService.swift; sourceTree = "<group>"; };
+		6E2BBD082D8C64EB0033A994 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		6E2BBD0C2D8C654E0033A994 /* CountryAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAPIModel.swift; sourceTree = "<group>"; };
 		6E5BD8F52D89B16D00A0BA7E /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		6E5BD8F82D89B43B00A0BA7E /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		6E5BD8FB2D89B71B00A0BA7E /* UIButton + setImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + setImage.swift"; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 		6E185E4A2D75CC6600A77A0D /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				6E2BBD0A2D8C65190033A994 /* Models */,
 				6E185E5F2D75CC9500A77A0D /* Application */,
 				6E185E822D75EA1800A77A0D /* Services */,
 				6E185E7C2D75E7BE00A77A0D /* Fonts */,
@@ -246,6 +253,7 @@
 		6E185E8A2D75EF1700A77A0D /* Visits */ = {
 			isa = PBXGroup;
 			children = (
+				6E2BBD052D8C63C70033A994 /* Network */,
 				6E5BD8F42D895C4A00A0BA7E /* Subviews */,
 				6EE9DEDD2D771A110015A19E /* VisitsViewController.swift */,
 				6EADA40D2D78649100BE0D93 /* Coordinator */,
@@ -259,6 +267,30 @@
 				6E185E8F2D764FF600A77A0D /* Localizable.strings */,
 			);
 			path = ru.lproj;
+			sourceTree = "<group>";
+		};
+		6E2BBD052D8C63C70033A994 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6E2BBD062D8C63D50033A994 /* VisitsService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6E2BBD0A2D8C65190033A994 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6E2BBD082D8C64EB0033A994 /* CountryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6E2BBD0B2D8C652A0033A994 /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				6E2BBD0C2D8C654E0033A994 /* CountryAPIModel.swift */,
+			);
+			path = APIModels;
 			sourceTree = "<group>";
 		};
 		6E5BD8F42D895C4A00A0BA7E /* Subviews */ = {
@@ -289,6 +321,7 @@
 		6E5BD9022D8B009B00A0BA7E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				6E2BBD0B2D8C652A0033A994 /* APIModels */,
 				6E5BD9002D8B009500A0BA7E /* APIClient.swift */,
 				6E5BD9092D8B06D200A0BA7E /* APIRequest.swift */,
 				6E5BD9062D8B039A00A0BA7E /* Models */,
@@ -448,7 +481,9 @@
 				6EDDD3152D7756580063426B /* Assets.swift in Sources */,
 				6EE9DEE02D771A260015A19E /* ProfileViewController.swift in Sources */,
 				6E5BD9042D8B032300A0BA7E /* APIResponse.swift in Sources */,
+				6E2BBD0D2D8C65580033A994 /* CountryAPIModel.swift in Sources */,
 				6E5BD8F92D89B43B00A0BA7E /* CheckBox.swift in Sources */,
+				6E2BBD092D8C64F30033A994 /* CountryModel.swift in Sources */,
 				6E5BD8FE2D89B76F00A0BA7E /* UIImage+resizeImage.swift in Sources */,
 				6E185E622D75CE1500A77A0D /* AppCoordinator.swift in Sources */,
 				6E185E6C2D75CFBC00A77A0D /* TabBarController.swift in Sources */,
@@ -466,6 +501,7 @@
 				6E185E702D75D05F00A77A0D /* CustomTabBar.swift in Sources */,
 				6E185E6A2D75CF3000A77A0D /* TabBarCoordinator.swift in Sources */,
 				6E185E642D75CE5800A77A0D /* Coordinator.swift in Sources */,
+				6E2BBD072D8C63E10033A994 /* VisitsService.swift in Sources */,
 				6E5BD8F62D89B16F00A0BA7E /* CountryTableViewCell.swift in Sources */,
 				6E5BD8FC2D89B71B00A0BA7E /* UIButton + setImage.swift in Sources */,
 				6E185E742D75E32000A77A0D /* TabBarChildCoordinated.swift in Sources */,
