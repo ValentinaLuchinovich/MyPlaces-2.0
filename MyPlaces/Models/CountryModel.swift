@@ -9,15 +9,42 @@
 struct CountryModel {
     var flags: FlagModel = .init()
     var name: CountryNameModel = .init()
+
+    init(_ model: CountryAPIModel) {
+        flags = FlagModel(model.flags)
+        name = CountryNameModel(model.name)
+    }
 }
 
 struct FlagModel {
     var png: String = ""
     var svg: String = ""
+    
+    init(png: String = "" ,
+         svg: String = "") {
+        self.png = png
+        self.svg = svg
+    }
+    
+    init(_ model: FlagAPIModel) {
+        png = model.png
+        svg = model.svg
+    }
 }
 
 struct CountryNameModel {
     var common: String = ""
     var official: String = ""
+    
+    init(common: String = "" ,
+         official: String = "") {
+        self.common = common
+        self.official = official
+    }
+    
+    
+    init(_ model: CountryNameAPIModel) {
+        common = model.common
+        official = model.official
+    }
 }
-

@@ -12,6 +12,8 @@ final class VisitsViewController: UIViewController {
     
     // MARK: Private properties
     
+    private let viewModel: VisitsViewModel
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.dataSource = self
@@ -19,8 +21,18 @@ final class VisitsViewController: UIViewController {
         tableView.register(CountryTableViewCell.self, forCellReuseIdentifier: CountryTableViewCell.cellID)
         return tableView
     }()
-
     
+    // MARK: Initialization
+    
+    init(_ viewModel: VisitsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: Lifecycle
     
     override func viewDidLoad() {
