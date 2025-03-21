@@ -6,17 +6,17 @@
 //
 
 /// Модель запроса на получение списка стран c сервера
-struct CountryAPIModel {
+struct CountryAPIModel: Decodable {
     let flags: FlagAPIModel
     let name: CountryNameAPIModel
 }
 
-struct FlagAPIModel {
+struct FlagAPIModel: Decodable {
     let png: String
     let svg: String
 }
 
-struct CountryNameAPIModel {
+struct CountryNameAPIModel: Decodable {
     let common: String
     let official: String
 }
