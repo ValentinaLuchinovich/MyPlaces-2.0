@@ -17,20 +17,15 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         }
     }
     
-    private lazy var mapBtn = UIButton(frame: CGRect(x: (self.view.bounds.width / 2)-26, y: -20, width: 52, height: 52))
+    private lazy var mapBtnImage = UIImageView(image: UIImage(systemName: "globe.europe.africa.fill"))
+    
+    private lazy var mapBtn = UIView(frame: CGRect(x: (self.view.bounds.width / 2)-26, y: -2, width: 52, height: 52))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setValue(CustomTabBar(frame: tabBar.frame), forKey: "tabBar")
         self.delegate = self
-        setupQrButton()
-    }
-    
-#warning("Сейчас верзня чвсть красной кнопки не работает")
-    
-    //Добавляет действия нажатия кнопки при попадании в зону tabBar.item
-    func qrButtonIsSelected() {
-        mapBtn.sendActions(for: .touchUpInside)
+        setupMapButton()
     }
 }
 
@@ -38,20 +33,16 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
 private extension TabBarController {
     
-    func setupQrButton() {
-        mapBtn.backgroundColor = .lightText
-        mapBtn.setImage( UIImage(systemName: "globe.europe.africa.fill"), for: .normal)
-        mapBtn.contentMode = .scaleToFill
+    func setupMapButton() {
+        mapBtnImage.tintColor = .orange
+        mapBtn.backgroundColor = .white
         mapBtn.layer.cornerRadius = (mapBtn.layer.frame.width / 2)
+        
+        mapBtn.addSubview(mapBtnImage)
+        mapBtnImage.snp.makeConstraints { make in
+            make.size.equalToSuperview()
+        }
+        
         self.tabBar.addSubview(mapBtn)
-        mapBtn.layer.removeAllAnimations()
-        mapBtn.addTarget(self, action: #selector(self.menuButtonAction), for: .touchUpInside)
-        self.view.layoutIfNeeded()
-    }
-    
-    @objc func menuButtonAction() {
-        let coordinator = MapTabCoordinator(NavigationController())
-        coordinator.parentNavigationController = navigationController as? NavigationController
-        coordinator.start()
     }
 }
