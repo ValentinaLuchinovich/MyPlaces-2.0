@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 /// Экран стрнан и посещенных мест
 final class VisitsViewController: UIViewController {
     
     // MARK: Private properties
     
+    private var cancellableSet = Set<AnyCancellable>()
     private let viewModel: VisitsViewModel
     
     private lazy var tableView: UITableView = {
@@ -21,6 +23,8 @@ final class VisitsViewController: UIViewController {
         tableView.register(CountryTableViewCell.self, forCellReuseIdentifier: CountryTableViewCell.cellID)
         return tableView
     }()
+    
+    private lazy var loader = CustomLoader()
     
     // MARK: Initialization
     
@@ -38,6 +42,7 @@ final class VisitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        loader.startAnimating()
     }
 }
 
@@ -45,17 +50,14 @@ final class VisitsViewController: UIViewController {
 
 extension VisitsViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        7
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        viewModel.countries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CountryTableViewCell.cellID, for: indexPath
         ) as! CountryTableViewCell
+        cell.configureCell(viewModel.countries[indexPath.row])
         return cell
     }
 }
@@ -80,16 +82,30 @@ private extension VisitsViewController {
     
     func configureLayout() {
         view.addSubview(tableView)
+        view.addSubview(loader)
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(AppConstants.smallPadding)
             make.bottom.equalToSuperview()
             make.horizontalEdges.equalToSuperview()
         }
+        
+        loader.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
     }
     
     func bindings() {
-        
+        viewModel.$countries.dropFirst()
+            .sink { [weak self] isDataLoaded in
+                Task {
+                    await MainActor.run {
+                        self?.tableView.reloadData()
+                        self?.loader.stopAnimating()
+                    }
+                }
+            }
+            .store(in: &cancellableSet)
     }
 }
 

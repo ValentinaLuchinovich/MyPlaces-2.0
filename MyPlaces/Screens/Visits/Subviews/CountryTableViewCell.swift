@@ -28,7 +28,6 @@ final class CountryTableViewCell: UITableViewCell {
     private lazy var flagImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .green
         return imageView
     }()
         
@@ -54,6 +53,11 @@ final class CountryTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configureCell(_ model: CountryModel) {
+        flagImageView.downloadImage(urlString: model.flags.png)
+        titleLabel.text = model.name.common
     }
 }
 
