@@ -58,9 +58,9 @@ private extension CheckboxButton {
     }
     
     func setupImage() {
-        let checkboxImage = Assets.Images.checkbox.image
+        let checkboxImage = Assets.Images.checkbox.image.withRenderingMode(.alwaysTemplate)
         
-        let selectedCheckboxImage = Assets.Images.checkboxSelected.image
+        let selectedCheckboxImage = Assets.Images.checkboxSelected.image.withRenderingMode(.alwaysTemplate)
         
         let image = isSelected
         ? selectedCheckboxImage
