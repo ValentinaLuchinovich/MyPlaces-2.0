@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E120FCE2D9553370018377E /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E120FCC2D9553370018377E /* Country+CoreDataProperties.swift */; };
+		6E120FD02D9554B00018377E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E120FCF2D9554B00018377E /* CoreDataManager.swift */; };
 		6E185E4C2D75CC6600A77A0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E4B2D75CC6600A77A0D /* AppDelegate.swift */; };
 		6E185E4E2D75CC6600A77A0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E4D2D75CC6600A77A0D /* SceneDelegate.swift */; };
 		6E185E502D75CC6600A77A0D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E185E4F2D75CC6600A77A0D /* MapViewController.swift */; };
@@ -61,6 +63,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E120FCC2D9553370018377E /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6E120FCF2D9554B00018377E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6E185E482D75CC6600A77A0D /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E185E4B2D75CC6600A77A0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E185E4D2D75CC6600A77A0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E120FD12D9564060018377E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6E120FCC2D9553370018377E /* Country+CoreDataProperties.swift */,
+				6E120FCF2D9554B00018377E /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		6E185E3F2D75CC6600A77A0D = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +162,6 @@
 				6E2BBD0A2D8C65190033A994 /* Models */,
 				6E185E5F2D75CC9500A77A0D /* Application */,
 				6E185E822D75EA1800A77A0D /* Services */,
-				6E185E7C2D75E7BE00A77A0D /* Fonts */,
 				6E185E6D2D75CFF500A77A0D /* DesignCore */,
 				6E185E662D75CEB600A77A0D /* Navigations */,
 				6E185E872D75EEE600A77A0D /* Screens */,
@@ -170,6 +182,7 @@
 			children = (
 				6E185E4B2D75CC6600A77A0D /* AppDelegate.swift */,
 				6E185E4D2D75CC6600A77A0D /* SceneDelegate.swift */,
+				6E120FD12D9564060018377E /* CoreData */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -202,6 +215,7 @@
 			children = (
 				6E5BD8FA2D89B6EF00A0BA7E /* Supporting */,
 				6E185E6E2D75D03F00A77A0D /* UIComponents */,
+				6E185E7C2D75E7BE00A77A0D /* Fonts */,
 			);
 			path = DesignCore;
 			sourceTree = "<group>";
@@ -502,6 +516,7 @@
 				6E185E7E2D75E7D000A77A0D /* Fonts.swift in Sources */,
 				6E185E762D75E37600A77A0D /* TabBarPage.swift in Sources */,
 				6EDDD3152D7756580063426B /* Assets.swift in Sources */,
+				6E120FD02D9554B00018377E /* CoreDataManager.swift in Sources */,
 				6EE9DEE02D771A260015A19E /* ProfileViewController.swift in Sources */,
 				6E5BD9042D8B032300A0BA7E /* APIResponse.swift in Sources */,
 				6E2BBD122D8D9B320033A994 /* VisitsViewModel.swift in Sources */,
@@ -515,6 +530,7 @@
 				6EDDD3172D77565E0063426B /* AppLocalizable.swift in Sources */,
 				6E5BD9082D8B03B000A0BA7E /* ErrorResponseAPIModel.swift in Sources */,
 				6E185E842D75EA3600A77A0D /* AppConstants.swift in Sources */,
+				6E120FCE2D9553370018377E /* Country+CoreDataProperties.swift in Sources */,
 				6EADA4122D7864D200BE0D93 /* ProfileCoordinator.swift in Sources */,
 				6E185E682D75CECE00A77A0D /* NavigationController.swift in Sources */,
 				6E55D9B72D93F41A0064205F /* UIImageView + downloadImage.swift in Sources */,
