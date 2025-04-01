@@ -5,6 +5,7 @@
 //  Created by Валентина Лучинович on 21.03.2025.
 //
 
+import Foundation
 import Combine
 
 final class VisitsViewModel {
@@ -16,7 +17,9 @@ final class VisitsViewModel {
     
     // MARK: Internal properties
     
-    @Published var countries: [CountryModel] = []
+    var countries: [CountryModel] = []
+    
+    @Published var updateCountries: Bool = false
     
     // MARK: Initialization
     
@@ -32,10 +35,25 @@ final class VisitsViewModel {
 
 private extension VisitsViewModel {
     func getCountries() {
-        Task {
-            do {
-                countries = try await self.visitsRepository.getAllCountries()
+#warning("По хороему надо бы логику доделать и обновлять список стран с бэка хотя ббы раз в месяц")
+        if CoreDataManager.shared.fetchCountries().isEmpty {
+            Task {
+                do {
+                    countries = try await self.visitsRepository.getAllCountries()
+                    updateCountries = true
+                    await MainActor.run {
+                        for country in self.countries {
+                            CoreDataManager.shared.createCountry(flag: country.flags.png,
+                                                                 name: country.name.common, been: false)
+                        }
+                    }
+                }
             }
+        } else {
+            for country in CoreDataManager.shared.fetchCountries() {
+                countries.append(CountryModel(flags: FlagModel(png: country.flag!), name: CountryNameModel(common: country.name!, official: ""), been: country.been))
+            }
+            updateCountries = true
         }
     }
 }

@@ -11,6 +11,12 @@ struct CountryModel {
     var name: CountryNameModel = .init()
     // Локальное свойство для checkBox
     var been: Bool = false
+    
+    init(flags: FlagModel, name: CountryNameModel, been: Bool) {
+        self.flags = flags
+        self.name = name
+        self.been = been
+    }
 
     init(_ model: CountryAPIModel) {
         flags = FlagModel(model.flags)

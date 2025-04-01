@@ -24,10 +24,10 @@ public final class CoreDataManager: NSObject  {
     }
     
     public func createCountry(flag: String, name: String, been: Bool) {
-        let country = NSEntityDescription.insertNewObject(forEntityName: "Country", into: context) as! Country
-        country.flag = flag
-        country.name = name
-        country.been = been
+        let country = NSEntityDescription.insertNewObject(forEntityName: "Country", into: context) as? Country
+        country?.flag = flag
+        country?.name = name
+        country?.been = been
         
         appDelegate.saveContext()
     }

@@ -96,12 +96,14 @@ private extension VisitsViewController {
     }
     
     func bindings() {
-        viewModel.$countries.dropFirst()
+        viewModel.$updateCountries
             .sink { [weak self] isDataLoaded in
-                Task {
-                    await MainActor.run {
-                        self?.tableView.reloadData()
-                        self?.loader.stopAnimating()
+                if isDataLoaded {
+                    Task {
+                        await MainActor.run {
+                            self?.tableView.reloadData()
+                            self?.loader.stopAnimating()
+                        }
                     }
                 }
             }
