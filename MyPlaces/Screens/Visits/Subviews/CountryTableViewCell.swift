@@ -23,6 +23,8 @@ final class CountryTableViewCell: UITableViewCell {
     
     // MARK: Private properties
     
+    private var name = ""
+    
     private lazy var containerView = UIView()
     
     private lazy var flagImageView: UIImageView = {
@@ -58,6 +60,9 @@ final class CountryTableViewCell: UITableViewCell {
     func configureCell(_ model: CountryModel) {
         flagImageView.downloadImage(urlString: model.flags.png)
         titleLabel.text = model.name.common
+        checkboxButton.isSelected = model.been
+        
+        name = model.name.common
     }
 }
 
@@ -68,6 +73,7 @@ private extension CountryTableViewCell {
     
     func didTapCheckbox() {
         checkboxButton.isSelected.toggle()
+        CoreDataManager.shared.updateCountry(with: name, been: checkboxButton.isSelected)
     }
 }
 
