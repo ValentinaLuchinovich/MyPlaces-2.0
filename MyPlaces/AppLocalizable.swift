@@ -10,7 +10,19 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum AppLocalizable {
-  public enum Localizable {
+      /// %@%%
+      public static func percent(_ p1: Any) -> String {
+        return AppLocalizable.tr("Localizable", "Percent", String(describing: p1), fallback: "%@%%")
+      }
+    
+    /// %@/ %@/
+    public static func counter(_ p1: Any, _ p2: Any) -> String {
+      return AppLocalizable.tr("Localizable", "Counter", String(describing: p1), String(describing: p2), fallback: "%@/%@")
+    }
+    
+    public enum ProgressBar {
+      /// 100%%
+      public static let maxProgress = AppLocalizable.tr("Localizable", "ProgressBar.MaxProgress", fallback: "100%%")
     }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

@@ -49,6 +49,8 @@
 		6E5BD90A2D8B06D200A0BA7E /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BD9092D8B06D200A0BA7E /* APIRequest.swift */; };
 		6E5BD90D2D8B070200A0BA7E /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 6E5BD90C2D8B070200A0BA7E /* SwiftyJSON */; };
 		6E5BD90F2D8B0F2200A0BA7E /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5BD90E2D8B0F1700A0BA7E /* LogService.swift */; };
+		6E833EEA2D9C27030014249B /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E833EE92D9C26F60014249B /* CounterView.swift */; };
+		6E833EEC2D9C2B7C0014249B /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E833EEB2D9C2B700014249B /* CustomProgressBar.swift */; };
 		6EADA40A2D7860AD00BE0D93 /* Geometria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EADA4072D7860AD00BE0D93 /* Geometria.ttf */; };
 		6EADA40B2D7860AD00BE0D93 /* Geometria-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EADA4082D7860AD00BE0D93 /* Geometria-Bold.ttf */; };
 		6EADA40C2D7860AD00BE0D93 /* Geometria-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EADA4092D7860AD00BE0D93 /* Geometria-Medium.ttf */; };
@@ -103,6 +105,8 @@
 		6E5BD9072D8B03AD00A0BA7E /* ErrorResponseAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseAPIModel.swift; sourceTree = "<group>"; };
 		6E5BD9092D8B06D200A0BA7E /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		6E5BD90E2D8B0F1700A0BA7E /* LogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogService.swift; sourceTree = "<group>"; };
+		6E833EE92D9C26F60014249B /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		6E833EEB2D9C2B700014249B /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
 		6EADA4072D7860AD00BE0D93 /* Geometria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Geometria.ttf; sourceTree = "<group>"; };
 		6EADA4082D7860AD00BE0D93 /* Geometria-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Bold.ttf"; sourceTree = "<group>"; };
 		6EADA4092D7860AD00BE0D93 /* Geometria-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Medium.ttf"; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 		6E185E6E2D75D03F00A77A0D /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				6E833EEB2D9C2B700014249B /* CustomProgressBar.swift */,
 				6E55D9B42D93EB060064205F /* CustomLoader.swift */,
 				6E5BD8F72D89B42300A0BA7E /* Buttons */,
 				6E185E6F2D75D05F00A77A0D /* CustomTabBar.swift */,
@@ -327,6 +332,7 @@
 		6E5BD8F42D895C4A00A0BA7E /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				6E833EE92D9C26F60014249B /* CounterView.swift */,
 				6E5BD8F52D89B16D00A0BA7E /* CountryTableViewCell.swift */,
 			);
 			path = Subviews;
@@ -519,12 +525,14 @@
 				6E5BD9042D8B032300A0BA7E /* APIResponse.swift in Sources */,
 				6E2BBD122D8D9B320033A994 /* VisitsViewModel.swift in Sources */,
 				6E2BBD0D2D8C65580033A994 /* CountryAPIModel.swift in Sources */,
+				6E833EEA2D9C27030014249B /* CounterView.swift in Sources */,
 				6E5BD8F92D89B43B00A0BA7E /* CheckBox.swift in Sources */,
 				6E55D9B52D93EF180064205F /* CustomLoader.swift in Sources */,
 				6E2BBD092D8C64F30033A994 /* CountryModel.swift in Sources */,
 				6E5BD8FE2D89B76F00A0BA7E /* UIImage+resizeImage.swift in Sources */,
 				6E185E622D75CE1500A77A0D /* AppCoordinator.swift in Sources */,
 				6E185E6C2D75CFBC00A77A0D /* TabBarController.swift in Sources */,
+				6E833EEC2D9C2B7C0014249B /* CustomProgressBar.swift in Sources */,
 				6EDDD3172D77565E0063426B /* AppLocalizable.swift in Sources */,
 				6E5BD9082D8B03B000A0BA7E /* ErrorResponseAPIModel.swift in Sources */,
 				6E185E842D75EA3600A77A0D /* AppConstants.swift in Sources */,
