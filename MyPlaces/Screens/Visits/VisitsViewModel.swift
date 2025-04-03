@@ -29,6 +29,13 @@ final class VisitsViewModel {
         
         getCountries()
     }
+    
+    func updateCountriesList() {
+        countries.removeAll()
+        for country in CoreDataManager.shared.fetchCountries() {
+            countries.append(CountryModel(flags: FlagModel(png: country.flag!), name: CountryNameModel(common: country.name!, official: ""), been: country.been))
+        }
+    }
 }
 
 // MARK: Private methods
@@ -50,9 +57,7 @@ private extension VisitsViewModel {
                 }
             }
         } else {
-            for country in CoreDataManager.shared.fetchCountries() {
-                countries.append(CountryModel(flags: FlagModel(png: country.flag!), name: CountryNameModel(common: country.name!, official: ""), been: country.been))
-            }
+            updateCountriesList()
             updateCountries = true
         }
     }

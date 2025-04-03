@@ -11,16 +11,27 @@ import Combine
 /// Экран стрнан и посещенных мест
 final class VisitsViewController: UIViewController {
     
+    // MARK: Constants
+    
+    private enum Constants {
+        static let headerHeight: CGFloat = 160
+    }
+    
     // MARK: Private properties
     
     private var cancellableSet = Set<AnyCancellable>()
     private let viewModel: VisitsViewModel
+    
+    let counterView = CounterView()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CountryTableViewCell.self, forCellReuseIdentifier: CountryTableViewCell.cellID)
+        
+        tableView.tableHeaderView = counterView
+        tableView.tableHeaderView?.frame.size = CGSize(width: tableView.frame.width, height: Constants.headerHeight)
         return tableView
     }()
     
@@ -58,6 +69,7 @@ extension VisitsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CountryTableViewCell.cellID, for: indexPath
         ) as! CountryTableViewCell
         cell.configureCell(viewModel.countries[indexPath.row])
+        cell.delegate = self
         return cell
     }
 }
@@ -103,11 +115,29 @@ private extension VisitsViewController {
                         await MainActor.run {
                             self?.tableView.reloadData()
                             self?.loader.stopAnimating()
+                            
+                            self?.setupCounterView()
                         }
                     }
                 }
             }
             .store(in: &cancellableSet)
     }
+    
+    func setupCounterView() {
+        viewModel.updateCountriesList()
+        
+        let beenCount = viewModel.countries.filter{ $0.been }.count
+        counterView.progress = viewModel.countries.count / 100 * beenCount
+        counterView.countriesCount = [beenCount:viewModel.countries.count]
+        counterView.setNeedsDisplay()
+    }
 }
 
+// MARK: CountryTableViewCellDelegate
+
+extension VisitsViewController: CountryTableViewCellDelegate {
+    func updateCounterView() {
+        setupCounterView()
+    }
+}

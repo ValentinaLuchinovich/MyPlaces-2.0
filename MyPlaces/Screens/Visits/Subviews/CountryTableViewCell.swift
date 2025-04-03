@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CountryTableViewCellDelegate {
+    func updateCounterView()
+}
+
 /// Ячейка с флагом
 final class CountryTableViewCell: UITableViewCell {
     
@@ -20,6 +24,7 @@ final class CountryTableViewCell: UITableViewCell {
     
     static let cellID = "countryTableViewCell"
     var isVisited: Bool = false
+    var delegate: CountryTableViewCellDelegate?
     
     // MARK: Private properties
     
@@ -74,6 +79,7 @@ private extension CountryTableViewCell {
     func didTapCheckbox() {
         checkboxButton.isSelected.toggle()
         CoreDataManager.shared.updateCountry(with: name, been: checkboxButton.isSelected)
+        delegate?.updateCounterView()
     }
 }
 

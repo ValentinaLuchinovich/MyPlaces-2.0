@@ -25,11 +25,18 @@ final class CounterView: UIView {
             progressBar.progress = progress
         }
     }
-        
+    
     /// желаемый/максимальный прогресс строкой
     var maxProgress: String? {
         didSet {
             maxProgressLabel.text = maxProgress
+        }
+    }
+    
+    /// Количество стран
+    var countriesCount: [Int: Int] = [0:0] {
+        didSet {
+            counterLabel.text = AppLocalizable.counter(countriesCount.keys.first!, countriesCount.values.first!)
         }
     }
     
@@ -48,7 +55,6 @@ final class CounterView: UIView {
         label.font = GeometriaFont.huge(.regular).font
         label.textColor = .orangeDark
         label.textAlignment = .center
-        label.text = AppLocalizable.counter(100, 150)
         return label
     }()
     
