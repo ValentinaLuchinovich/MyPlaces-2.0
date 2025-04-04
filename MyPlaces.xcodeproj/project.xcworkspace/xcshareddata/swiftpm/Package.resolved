@@ -1,6 +1,15 @@
 {
-  "originHash" : "bd6f98a17e5fc3e9c2ac826c7cee22bd6717b6616a1b7d6e6ef7278734cf201a",
+  "originHash" : "a8a18671d4c7f583e33ca5bf34b1178c7d09997fe00dbf4f2decf48057ff9d0b",
   "pins" : [
+    {
+      "identity" : "interactivemap",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GrandSir/InteractiveMap",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4fc6f5f736c9cbf2352938a6b27712937a5d6465"
+      }
+    },
     {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",
