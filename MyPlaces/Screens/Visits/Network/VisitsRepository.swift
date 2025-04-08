@@ -27,6 +27,6 @@ final class VisitsRepository {
 extension VisitsRepository: VisitsRepositoryProtocol {
     func getAllCountries() async throws -> [CountryModel] {
         let model = try await visitsService.getAllCountries()
-        return .init(model.map { CountryModel($0)})
+        return .init(model.filter{$0.independent ?? true}.map { CountryModel($0)})
     }
 }

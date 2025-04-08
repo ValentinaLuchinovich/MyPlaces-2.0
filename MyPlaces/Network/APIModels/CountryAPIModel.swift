@@ -9,6 +9,8 @@
 struct CountryAPIModel: Decodable {
     let flags: FlagAPIModel
     let name: CountryNameAPIModel
+    let independent: Bool?
+    let cca2: String
 }
 
 struct FlagAPIModel: Decodable {

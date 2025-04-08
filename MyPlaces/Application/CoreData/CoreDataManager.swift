@@ -23,10 +23,11 @@ public final class CoreDataManager: NSObject  {
         appDelegate.persistentContainer.viewContext
     }
     
-    public func createCountry(flag: String, name: String, been: Bool) {
+    public func createCountry(flag: String, name: String, cca2: String, been: Bool) {
         let country = NSEntityDescription.insertNewObject(forEntityName: "Country", into: context) as? Country
         country?.flag = flag
         country?.name = name
+        country?.cca2 = cca2
         country?.been = been
         
         appDelegate.saveContext()

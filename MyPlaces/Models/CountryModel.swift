@@ -9,18 +9,22 @@
 struct CountryModel {
     var flags: FlagModel = .init()
     var name: CountryNameModel = .init()
+    // Буквенный код страны для взаимодействия с картой
+    var cca2: String = ""
     // Локальное свойство для checkBox
     var been: Bool = false
     
-    init(flags: FlagModel, name: CountryNameModel, been: Bool) {
+    init(flags: FlagModel, name: CountryNameModel, ссa2: String, been: Bool) {
         self.flags = flags
         self.name = name
+        self.cca2 = ссa2
         self.been = been
     }
 
     init(_ model: CountryAPIModel) {
         flags = FlagModel(model.flags)
         name = CountryNameModel(model.name)
+        cca2 = model.cca2
     }
 }
 
