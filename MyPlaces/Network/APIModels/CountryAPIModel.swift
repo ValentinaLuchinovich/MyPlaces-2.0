@@ -9,6 +9,7 @@
 struct CountryAPIModel: Decodable {
     let flags: FlagAPIModel
     let name: CountryNameAPIModel
+    let cca2: String
 }
 
 struct FlagAPIModel: Decodable {

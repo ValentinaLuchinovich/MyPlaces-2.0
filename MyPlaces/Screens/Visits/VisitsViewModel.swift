@@ -33,7 +33,7 @@ final class VisitsViewModel {
     func updateCountriesList() {
         countries.removeAll()
         for country in CoreDataManager.shared.fetchCountries() {
-            countries.append(CountryModel(flags: FlagModel(png: country.flag!), name: CountryNameModel(common: country.name!, official: ""), been: country.been))
+            countries.append(CountryModel(flags: FlagModel(png: country.flag!), name: CountryNameModel(common: country.name!, official: ""), ссa2: country.cca2 ?? "", been: country.been))
         }
     }
 }
@@ -51,7 +51,9 @@ private extension VisitsViewModel {
                     await MainActor.run {
                         for country in self.countries {
                             CoreDataManager.shared.createCountry(flag: country.flags.png,
-                                                                 name: country.name.common, been: false)
+                                                                 name: country.name.common,
+                                                                 cca2: country.cca2,
+                                                                 been: false)
                         }
                     }
                 }
