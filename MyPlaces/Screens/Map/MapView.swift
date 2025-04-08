@@ -7,19 +7,24 @@
 
 import SwiftUI
 import InteractiveMap
+import CoreData
+import Combine
 
+///  Экран карты
 struct MapView: View {
     @State private var scale: CGFloat = 1.0
     @State private var offset: CGSize = .zero
     @State private var lastScale: CGFloat = 1.0
     @State private var lastOffset: CGSize = .zero
+    @State private var visitedCountries: Set<String> = []
     
     var body: some View {
         GeometryReader { geometry in
             InteractiveMap(svgName: "world") { pathData in
+                let countryCode = pathData.id
                 InteractiveShape(pathData)
-                    .fill(.gray.opacity(0.3))
-                    .stroke(Color.orangeDark .opacity(0.5), lineWidth: 0.3 )
+                    .fill(visitedCountries.contains(countryCode) ? Color.orangeDark.opacity(0.7) : Color.gray.opacity(0.3))
+                    .stroke(Color.orangeDark.opacity(0.5), lineWidth: 0.3)
             }
             .scaleEffect(scale)
             .offset(offset)
@@ -50,6 +55,20 @@ struct MapView: View {
         }
         .background(Color.black)
         .edgesIgnoringSafeArea(.all)
+        .task {
+            await loadVisitedCountries()
+        }
     }
+
 }
 
+// MARK: Private methods
+
+private extension MapView {
+    
+    private func loadVisitedCountries() async {
+        let countries = CoreDataManager.shared.fetchCountries()
+        visitedCountries = Set(countries.filter { $0.been }.compactMap { $0.cca2 })
+    }
+    
+}
