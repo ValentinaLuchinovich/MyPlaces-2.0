@@ -12,6 +12,18 @@ import Combine
 
 ///  Экран карты
 struct MapView: View {
+    // MARK: Constants
+    
+    private enum Constants {
+        static let mapWidth: CGFloat = 0.9
+        static let mapHeight: CGFloat = 0.5
+        static let mapVerticalPosition: CGFloat = 0.6
+        static let strokeWidth: CGFloat = 0.3
+        static let visitedOpacity: CGFloat = 0.7
+        static let unvisitedOpacity: CGFloat = 0.3
+        static let strokeOpacity: CGFloat = 0.5
+    }
+    
     @StateObject private var viewModel = MapViewModel()
     
     var body: some View {
@@ -19,13 +31,13 @@ struct MapView: View {
             InteractiveMap(svgName: "world") { pathData in
                 let countryCode = pathData.id
                 InteractiveShape(pathData)
-                    .fill(viewModel.visitedCountries.contains(countryCode) ? Color.orangeDark.opacity(0.7) : Color.gray.opacity(0.3))
-                    .stroke(Color.orangeDark.opacity(0.5), lineWidth: 0.3)
+                    .fill(viewModel.visitedCountries.contains(countryCode) ? Color.orangeDark.opacity(Constants.visitedOpacity) : Color.gray.opacity(Constants.unvisitedOpacity))
+                    .stroke(Color.orangeDark.opacity(Constants.strokeOpacity), lineWidth: Constants.strokeWidth)
             }
             .scaleEffect(viewModel.scale)
             .offset(viewModel.offset)
-            .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.5)
-            .position(x: geometry.size.width / 2, y: geometry.size.height * 0.6)
+            .frame(width: geometry.size.width * Constants.mapWidth, height: geometry.size.height * Constants.mapHeight)
+            .position(x: geometry.size.width / 2, y: geometry.size.height * Constants.mapVerticalPosition)
             .gesture(
                 SimultaneousGesture(
                     MagnificationGesture()
