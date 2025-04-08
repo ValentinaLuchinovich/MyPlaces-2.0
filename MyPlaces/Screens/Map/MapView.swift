@@ -59,5 +59,8 @@ struct MapView: View {
         }
         .background(Color.black)
         .edgesIgnoringSafeArea(.all)
+        .task {
+            viewModel.loadVisitedCountries()
+        }
     }
 }

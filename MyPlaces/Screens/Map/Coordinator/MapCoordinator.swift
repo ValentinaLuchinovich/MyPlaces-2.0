@@ -22,8 +22,6 @@ final class MapCoordinator: Coordinator {
 extension MapCoordinator: TabBarChildCoordinated {
     
     public func makeTab() -> UIViewController {
-#warning("Переделать на фабрику")
         return UIHostingController(rootView: MapView())
-//        BackgroundViewController(VisitsFactory().build(coordinator: self), navigationController: navigationController)
     }
 }

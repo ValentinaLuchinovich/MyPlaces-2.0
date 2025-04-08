@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-@MainActor
 final class MapViewModel: ObservableObject {
     @Published var scale: CGFloat = 1.0
     @Published var offset: CGSize = .zero
@@ -14,7 +13,6 @@ final class MapViewModel: ObservableObject {
     
     init(coreDataManager: CoreDataManager = .shared) {
         self.coreDataManager = coreDataManager
-        loadVisitedCountries()
     }
     
     func updateScale(_ value: CGFloat) {
@@ -37,7 +35,7 @@ final class MapViewModel: ObservableObject {
         lastOffset = offset
     }
     
-    private func loadVisitedCountries() {
+    func loadVisitedCountries() {
         let countries = coreDataManager.fetchCountries()
         visitedCountries = Set(countries.filter { $0.been }.compactMap { $0.cca2 })
     }
