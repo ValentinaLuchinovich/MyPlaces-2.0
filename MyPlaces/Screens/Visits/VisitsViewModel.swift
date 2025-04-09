@@ -18,6 +18,7 @@ final class VisitsViewModel {
     // MARK: Internal properties
     
     var countries: [CountryModel] = []
+    var filteredCountries: [CountryModel] = []
     
     @Published var updateCountries: Bool = false
     
@@ -35,6 +36,20 @@ final class VisitsViewModel {
         for country in CoreDataManager.shared.fetchCountries() {
             countries.append(CountryModel(flags: FlagModel(png: country.flag!), name: CountryNameModel(common: country.name!, official: ""), ссa2: country.cca2 ?? "", been: country.been))
         }
+    }
+    
+    func filterCountries(with searchText: String) {
+        if searchText.isEmpty {
+            filteredCountries = []
+        } else {
+            filteredCountries = countries.filter { country in
+                country.name.common.lowercased().contains(searchText.lowercased())
+            }
+        }
+    }
+    
+    func getCountriesForDisplay() -> [CountryModel] {
+        filteredCountries.isEmpty ? countries : filteredCountries
     }
 }
 

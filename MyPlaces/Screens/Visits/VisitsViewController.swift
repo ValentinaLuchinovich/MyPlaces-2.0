@@ -22,6 +22,14 @@ final class VisitsViewController: UIViewController {
     private var cancellableSet = Set<AnyCancellable>()
     private let viewModel: VisitsViewModel
     
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search countries"
+        searchBar.delegate = self
+        searchBar.searchBarStyle = .minimal
+        return searchBar
+    }()
+    
     let counterView = CounterView()
     
     private lazy var tableView: UITableView = {
@@ -62,13 +70,14 @@ final class VisitsViewController: UIViewController {
 extension VisitsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.countries.count
+        viewModel.getCountriesForDisplay().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CountryTableViewCell.cellID, for: indexPath
         ) as! CountryTableViewCell
-        cell.configureCell(viewModel.countries[indexPath.row])
+        let country = viewModel.getCountriesForDisplay()[indexPath.row]
+        cell.configureCell(country)
         cell.delegate = self
         return cell
     }
@@ -80,6 +89,23 @@ extension VisitsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         CGFloat.leastNormalMagnitude
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
+    }
+}
+
+// MARK: UISearchBarDelegate
+
+extension VisitsViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.filterCountries(with: searchText)
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 
@@ -93,11 +119,17 @@ private extension VisitsViewController {
     }
     
     func configureLayout() {
+        view.addSubview(searchBar)
         view.addSubview(tableView)
         view.addSubview(loader)
         
+        searchBar.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.horizontalEdges.equalToSuperview()
+        }
+        
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(AppConstants.smallPadding)
+            make.top.equalTo(searchBar.snp.bottom).offset(AppConstants.smallPadding)
             make.bottom.equalToSuperview()
             make.horizontalEdges.equalToSuperview()
         }
