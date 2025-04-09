@@ -14,7 +14,8 @@ final class CheckboxButton: UIButton {
     // MARK: Constants
     
     private enum Constants {
-        static let size = CGSize(width: 20, height: 20)
+        static let visualSize = CGSize(width: 20, height: 20)
+        static let touchTargetSize = CGSize(width: 44, height: 44) // Standard iOS touch target size
     }
     
     // MARK: Public properties
@@ -53,7 +54,7 @@ private extension CheckboxButton {
     func setupUI() {
         setupImage()
         snp.makeConstraints { make in
-            make.size.equalTo(Constants.size)
+            make.size.equalTo(Constants.touchTargetSize)
         }
     }
     
@@ -66,6 +67,6 @@ private extension CheckboxButton {
         ? selectedCheckboxImage
         : checkboxImage
        
-        setImage(image.resizeImage(Constants.size))
+        setImage(image.resizeImage(Constants.visualSize))
     }
 }

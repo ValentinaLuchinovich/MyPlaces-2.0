@@ -40,7 +40,6 @@ final class CountryTableViewCell: UITableViewCell {
         
     private lazy var titleLabel: Label = {
         let label = Label(font: .base(.medium))
-        label.text = "Название страны"
         label.textAlignment = .left
         return label
     }()
@@ -115,7 +114,7 @@ private extension CountryTableViewCell {
         checkboxButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalTo(titleLabel.snp.trailing).offset(AppConstants.mediumPadding)
-            make.trailing.equalToSuperview().inset(AppConstants.mediumPadding)
+            make.trailing.equalToSuperview()
         }
     }
 }
