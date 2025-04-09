@@ -114,6 +114,7 @@ extension VisitsViewController: UISearchBarDelegate {
 private extension VisitsViewController {
     
     func setupUI() {
+        view.backgroundColor = .white
         bindings()
         configureLayout()
     }

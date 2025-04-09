@@ -14,6 +14,7 @@ class Coordinator {
     // MARK: Initialization
     
     required init(_ navigationController: NavigationController = NavigationController()) {
+        navigationController.setNavigationBarHidden(true, animated: false)
         self.navigationController = navigationController
     }
     
