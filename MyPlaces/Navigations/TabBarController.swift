@@ -26,6 +26,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         self.setValue(CustomTabBar(frame: tabBar.frame), forKey: "tabBar")
         self.delegate = self
         setupMapButton()
+        
+        UITabBar.appearance().tintColor = .orange
     }
 }
 

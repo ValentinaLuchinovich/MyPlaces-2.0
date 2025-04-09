@@ -23,9 +23,9 @@ enum TabBarPage: CaseIterable {
     var title: String {
         var title = ""
         switch self {
-        case .visits: title = "Путешествия"
+        case .visits: title = "Countries"
         case .map: title = ""
-        case .profile: title = "Профиль"
+        case .profile: title = "Profile"
         }
         return title
     }
@@ -53,9 +53,9 @@ enum TabBarPage: CaseIterable {
     var selectedIcon: UIImage? {
         var icon: UIImage?
         switch self {
-        case .visits: icon = UIImage(systemName: "map.fill")
+        case .visits: icon = UIImage(systemName: "map.fill")?.withTintColor(.orange)
         case .map: icon = nil
-        case .profile: icon = UIImage(systemName: "person.fill")
+        case .profile: icon = UIImage(systemName: "person.fill")?.withTintColor(.orange)
         }
         return icon
     }
