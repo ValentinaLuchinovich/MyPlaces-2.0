@@ -19,6 +19,7 @@ final class ProfileViewController: UIViewController {
         static let buttonHeight: CGFloat = 40
         static let buttonCornerRadius: CGFloat = 20
         static let borderWidth: CGFloat = 5
+        static let cameraImageSize: CGFloat = 50
     }
     
     // MARK: - Private properties
@@ -33,7 +34,7 @@ final class ProfileViewController: UIViewController {
         imageView.layer.cornerRadius = Constants.cornerRadius
         imageView.layer.borderWidth = Constants.borderWidth
         imageView.layer.borderColor = UIColor.orangeDark.cgColor
-        imageView.backgroundColor = .systemGray5
+        imageView.backgroundColor = .orangeDark
         imageView.isUserInteractionEnabled = true
         return imageView
     }()
@@ -96,7 +97,12 @@ private extension ProfileViewController {
         viewModel.$profileImage
             .receive(on: DispatchQueue.main)
             .sink { [weak self] image in
-                self?.profileImageView.image = image
+                if let image = image {
+                    self?.profileImageView.image = image
+                } else {
+                    let cameraImage = UIImage(systemName: "camera.circle.fill")
+                    self?.profileImageView.image = cameraImage?.withTintColor(.systemGray4, renderingMode: .alwaysOriginal)
+                }
             }
             .store(in: &cancellables)
         
