@@ -24,6 +24,9 @@ public enum AppLocalizable {
       /// 100%%
       public static let maxProgress = AppLocalizable.tr("Localizable", "ProgressBar.MaxProgress", fallback: "100%%")
     }
+    
+    /// Add Photo
+    public static let addPhoto = AppLocalizable.tr("Localizable", "AddPhoto", fallback: "Add Photo")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
