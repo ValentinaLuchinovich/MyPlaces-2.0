@@ -18,6 +18,7 @@ final class ProfileViewController: UIViewController {
         static let buttonWidth: CGFloat = 120
         static let buttonHeight: CGFloat = 40
         static let buttonCornerRadius: CGFloat = 20
+        static let borderWidth: CGFloat = 5
     }
     
     // MARK: - Private properties
@@ -30,6 +31,8 @@ final class ProfileViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = Constants.cornerRadius
+        imageView.layer.borderWidth = Constants.borderWidth
+        imageView.layer.borderColor = UIColor.orangeDark.cgColor
         imageView.backgroundColor = .systemGray5
         imageView.isUserInteractionEnabled = true
         return imageView
@@ -39,7 +42,7 @@ final class ProfileViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle(AppLocalizable.addPhoto, for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = .orangeDark
         button.layer.cornerRadius = Constants.buttonCornerRadius
         button.addTarget(self, action: #selector(addPhotoTapped), for: .touchUpInside)
         return button
@@ -70,7 +73,7 @@ final class ProfileViewController: UIViewController {
 
 private extension ProfileViewController {
     func setupUI() {
-        view.backgroundColor = .orangeDark
+        view.backgroundColor = .white
         
         view.addSubview(profileImageView)
         view.addSubview(addPhotoButton)
