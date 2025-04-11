@@ -24,13 +24,18 @@ final class VisitsViewController: UIViewController {
     
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.placeholder = "Search countries"
+        searchBar.isHidden = true
+        searchBar.placeholder = AppLocalizable.searchCountries
         searchBar.delegate = self
         searchBar.searchBarStyle = .minimal
         return searchBar
     }()
     
-    let counterView = CounterView()
+    let counterView: CounterView = {
+        let view = CounterView()
+        view.isHidden = true
+        return view
+    }()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -148,7 +153,6 @@ private extension VisitsViewController {
                         await MainActor.run {
                             self?.tableView.reloadData()
                             self?.loader.stopAnimating()
-                            
                             self?.setupCounterView()
                         }
                     }
@@ -158,6 +162,8 @@ private extension VisitsViewController {
     }
     
     func setupCounterView() {
+        searchBar.isHidden = false
+        counterView.isHidden = false
         viewModel.updateCountriesList()
         
         let beenCount = viewModel.countries.filter{ $0.been }.count

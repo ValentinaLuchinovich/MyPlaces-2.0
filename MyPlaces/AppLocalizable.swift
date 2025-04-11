@@ -27,6 +27,9 @@ public enum AppLocalizable {
     
     /// Add Photo
     public static let addPhoto = AppLocalizable.tr("Localizable", "AddPhoto", fallback: "Add Photo")
+    
+    /// Search countries
+    public static let searchCountries = AppLocalizable.tr("Localizable", "SearchCountries", fallback: "Search countries")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
