@@ -63,18 +63,4 @@ public final class CoreDataManager: NSObject  {
         
         appDelegate.saveContext()
     }
-    
-    
-    #warning("Пока по логике получение конкретной страны не нужно")
-    
-//    public func fetchCountry(name: String) -> Country? {
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Country")
-//        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
-//        do {
-//            return try context.fetch(fetchRequest).first as? Country
-//        } catch {
-//            print("Не удалось получить страну: \(error)")
-//            return nil
-//        }
-//    }
 }
